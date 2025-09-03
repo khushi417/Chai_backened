@@ -10,6 +10,14 @@ import connectDB from "./db/index.js";
 
 
 connectDB()
+.then(()=>{
+    app.listen(process.env.PORT||8000,()=>{
+        console.log(`server is running at port :${process.env.port}`);
+    })
+})
+.catch((error)=>{
+    console.log("MONGI db connection failed !!!",error)
+})
 
 
 
